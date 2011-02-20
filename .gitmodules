@@ -1,3 +1,6 @@
 [submodule "dependencies/xmake"]
 	path = dependencies/xmake
 	url = git://github.com/Kanma/XMake.git
+[submodule "dependencies/sip"]
+	path = dependencies/sip
+	url = git://github.com/Kanma/sip.git
