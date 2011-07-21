@@ -2,14 +2,16 @@
 
 import wx
 from ui import MainWindow
+from processing.ast import DeclarationsList
 
 
 class Application(wx.App):
 
     def __init__(self):
-        wx.App.__init__(self, redirect=False)
-
         self.mainWindow = None
+        self.declarations = DeclarationsList()
+
+        wx.App.__init__(self, redirect=False)
         
 
     def OnInit(self):
@@ -27,6 +29,8 @@ class Application(wx.App):
         self.mainWindow.Show(True)
 
         self.SetTopWindow(self.mainWindow)
+
+        
 
         return True
 

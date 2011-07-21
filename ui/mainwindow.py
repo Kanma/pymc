@@ -1,13 +1,12 @@
 import wx
-# from DeclarationsTree import *
+import wx.dataview as dv
+from declarationstree import DeclarationsTree
 
 
 class MainWindow(wx.Frame):
 
     def __init__(self, parent, id, title, size=wx.Size(800, 600)):
         wx.Frame.__init__(self, parent, id, title, size=size)
-
-        # self.tree = DeclarationsTree(self, -1)
 
         toolBar = self.CreateToolBar(wx.NO_BORDER | wx.TB_HORIZONTAL | wx.TB_TEXT)
         toolBar.AddLabelTool(1, 'New project', wx.Bitmap('resources/create.png', wx.BITMAP_TYPE_PNG))
@@ -28,4 +27,4 @@ class MainWindow(wx.Frame):
         self.Bind(wx.EVT_TOOL, wx.GetApp().Parse, id=4)
         self.Bind(wx.EVT_TOOL, wx.GetApp().Generate, id=5)
         
-        # self.tree.showList(wx.GetApp().declarations)
+        self.tree = DeclarationsTree(self, -1, wx.GetApp().declarations)
